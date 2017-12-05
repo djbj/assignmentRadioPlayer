@@ -1,5 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  margin: 0;
+  padding: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  background-color: #efefef;
+  width: 100vw;
+  font-size: 36px;
+  border-bottom: 3px solid black;
+  letter-spacing: 3px;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+img {
+  width: 75px;
+  height: 75px;
+}
+
+.allChannels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.allStationss {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.station {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stationDescription h2,
+.stationDescription a {
+  width: 225px;
+  margin: 0;
+  text-align: left;
+  color: #efefef;
+}
+
+.stationDescription p {
+  width: 225px;
+  margin: 0;
+  font-size: 13px;
+  height: 47px;
+  overflow: hidden;
+  font-style: italic;
+  color: #efefef;
+  font-weight: lighter;
+}
+
+audio {
+  width: 300px;
+  margin: 5px;
 }

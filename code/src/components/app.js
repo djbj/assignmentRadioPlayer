@@ -23,67 +23,32 @@ class App extends React.Component {
   render() {
     if (this.state.listOfChannels.length > 0) {
       return <div>
-        Radio Channels <br />
-        Here you can find a list of {this.state.listOfChannels.length} radio channels: <br />
+        <h1 className="header">Radio Channels</h1><br />
         <div className="allChannels">
-          Channel name: {this.state.listOfChannels[0].name}<br />
-          Image name: {this.state.listOfChannels[0].image}<br />
-          Colour value: {this.state.listOfChannels[0].color}<br />
-
-          {this.state.listOfChannels.map((item) => {
-            return <Station key={item.id} name={item.name}/>
+          {this.state.listOfChannels.map((item, index) => {
+            return <div className="allStations" key={item.id}>
+              <Station
+                name={item.name}
+                image={item.image}
+                siteurl={item.siteurl}
+                tagline={item.tagline}
+                backgroundColor={item.color} />
+              <audio controls>
+                {/* <track kind="captions" {} /> */}
+                <source src={this.state.listOfChannels[index].liveaudio.url} type="audio/mpeg" />
+                <source src={this.state.listOfChannels[index].liveaudio.url} type="audio/mpeg" />
+                  Your browser does not support the audio tag.
+              </audio>
+              <hr />
+              <br />
+            </div>
           })}
-          <audio controls>
-            <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg" />
-            <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg" />
-            Your browser does not support the audio tag.
-          </audio><br />
         </div>
-        </div>
+      </div>
     } else {
-      return <div>Loading Radio Channels</div>
+      return <div>Loading Radio Channels ... please hold on ...</div>
     }
   }
-
-
-
-  // <div className="listOfProducts">
-  //           { productsJson.products.map( (item, index) => {
-  //             return <Product key={item.id} name={item.name}/>
-  //           })}
-  //         </div>
-
-  // render() {
-  //   return (
-  //     <div>
-  //       <h1>Welcom, we have {listOfChannels.length} Radio Channels for you</h1>
-  //       <div className="allChannels">
-  //         {listOfChannels.channels.map((item, index) => {
-  //           return <Station key={item.id} name={item.name} type={item.color} />
-  //         })}
-  //       </div>
-  //     </div>
-  //   )
-  //
-  // }
 }
 
-// if (this.state.listOfChannels.length > 0) {
-//   return <div>
-//     Radio Channels <br />
-//     Here you can find a list of {this.state.listOfChannels.length} radio channels: <br />
-//     <div className="allChannels">
-//       Channel name: {this.state.listOfChannels[0].name}<br />
-//       Image name: {this.state.listOfChannels[0].image}<br />
-//       Colour value: {this.state.listOfChannels[0].color}<br />
-//       <audio controls>
-//         <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg" />
-//         <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg" />
-//         Your browser does not support the audio tag.
-//       </audio><br />
-//     </div>
-//     </div>
-// } else {
-//   return <div>Loading Radio Channels</div>
-// }
 export default App

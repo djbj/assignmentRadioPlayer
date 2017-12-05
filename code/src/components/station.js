@@ -1,14 +1,18 @@
 import React from "react"
 
 class Station extends React.Component {
+
   render() {
     return (
-      // <div className="StationContainer">
-        <div className="Station">
-          <h2>{this.props.name}</h2>
-          <img src={this.props.id} alt="Station" />
+      <div className="station" style={{ backgroundColor: `#${this.props.backgroundColor}` }}>
+        <div className="stationLogo">
+          <img src={this.props.image} alt="Station" />
         </div>
-      // </div>
+        <div className="stationDescription" style={{ backgroundColor: `#${this.props.backgroundColor}` }}>
+          <h2>{this.props.name}</h2>
+          <p>{this.props.tagline}</p>
+        </div>
+      </div>
     )
   }
 }
