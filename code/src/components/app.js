@@ -25,18 +25,18 @@ class App extends React.Component {
   render() {
     if (this.state.listOfChannels.length > 0) {
       return <div>
-        Radio Channels <br/>
-        Here you can find a list of {this.state.listOfChannels.length} radio channels: <br/>
-        Channel name: {this.state.listOfChannels[0].name}<br/>
-        Image name: {this.state.listOfChannels[0].image}<br/>
-        Colour value: {this.state.listOfChannels[0].color}<br/>
-        <audio controls autoPlay>
-          <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg"/>
-          <source src="" type="audio/mpeg"/>
-          Your browser does not support the audio tag.
-        </audio><br/>
+        Radio Channels <br />
+        Here you can find a list of {this.state.listOfChannels.length} radio channels: <br />
 
-      </div>
+        Channel name: {this.state.listOfChannels[0].name}<br />
+        Image name: {this.state.listOfChannels[0].image}<br />
+        Colour value: {this.state.listOfChannels[0].color}<br />
+        <audio controls>
+          <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg" />
+          <source src={this.state.listOfChannels[0].liveaudio.url} type="audio/mpeg" />
+          Your browser does not support the audio tag.
+        </audio><br />
+        </div>
     } else {
       return <div>Loading Radio Channels</div>
     }
